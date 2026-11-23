@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+        <header>
+            <div>
+                <h1>Student Management</h1>
+                <p>Manage your student records efficiently.</p>
+            </div>
+            <div class="profile">AK</div>
+        </header>
+
+        <!-- Statistics -->
+        <section class="stats">
+
+            <div class="stat-card">
+                <div class="stat-icon blue">👨‍🎓</div>
+                <div>
+                    <p>Total Students</p>
+                    <h2 id="totalStudents">0</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon green">📚</div>
+                <div>
+                    <p>Total Courses</p>
+                    <h2 id="totalCourses">5</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon orange">📊</div>
+                <div>
+                    <p>Average Marks</p>
+                    <h2 id="averageMarks">0</h2>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Add Student Form -->
+        <section class="form-section">
+
+            <div class="section-heading">
+                <h2>Add New Student</h2>
+                <p>Enter student details below</p>
+            </div>
+
+            <form id="studentForm">
+
+                <div class="form-grid">
+
+                    
+
+                    <div class="input-group">
+                        <label>Student Name</label>
+                        <input type="text" id="studentName"
+                            placeholder="Enter full name" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Student Email</label>
+                        <input type="email" id="studentemail"
+                            placeholder="Enter student Email" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Age</label>
+                        <input type="number" id="studentAge"
+                            placeholder="Enter age" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Course</label>
+                        <select id="studentCourse" required>
+                            <option value="">Select course</option>
+                            <option value="Computer Engineering">Computer Engineering</option>
+                            <option value="Information Technology">Information Technology</option>
+                            <option value="Mechanical Engineering">Mechanical Engineering</option>
+                            <option value="Civil Engineering">Civil Engineering</option>
+                            <option value="Electronics">Electronics</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Marks</label>
+                        <input type="number" id="studentMarks"
+                            placeholder="Enter marks" min="0" max="100" required>
+                    </div>
+
+                </div>
+
+                <button type="button" class="add-btn" onclick="addStudent()">
+                    + Add Student
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- Student Records -->
+        <section class="records-section">
+
+            <div class="records-header">
+                <div>
+                    <h2>Student Records</h2>
+                    <p>View and manage all students</p>
+                </div>
+
+                <div class="search-box">
+                    <input type="text" id="searchInput"
+                        placeholder="Search by ID or name...">
+                    <button type="button" id="searchBtn" onclick="searchStudent()">Search</button>
+                </div>
+            </div>
+
+            <div class="table-container">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>STUDENT ID</th>
+                            <th>NAME</th>
+                            <th>AGE</th>
+                            <th>COURSE</th>
+                            <th>MARKS</th>
+                            <th>ACTIONS</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="studentTable">
+                        <!-- JavaScript will insert records here -->
+
+                        <tr>
+                            <td colspan="6" class="empty-message">
+                                No student records found.
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+        </section>
+
+        <footer>
+            Student Management System | JavaScript Practice Project
+        </footer>
+
+    </div>
+
+    <!-- <script src="storage.js"></script> -->
+    <script src="script.js"></script>
+    
+
+</body>
+</html>
